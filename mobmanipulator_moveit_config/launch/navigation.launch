@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(find mobmanipulator_moveit_config)/maps/myhomemap.yaml"/>
+
+  <!-- AMCL -->
+  <include file="$(find mobmanipulator_moveit_config)/launch/amcl.launch"/>
+
+
+  <!-- move_base -->
+  <include file="$(find mobmanipulator_moveit_config)/launch/move_base.launch"/>
+
+  
+</launch>
